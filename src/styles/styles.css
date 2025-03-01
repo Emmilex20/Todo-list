@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff5f6d, #ff9966);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Background Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Todo List Container */
+.todo-list {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.todo-list:hover {
+    transform: scale(1.02);
+}
+
+/* Add Task Form */
+.add-task-form {
+    display: flex;
+    gap: 10px;
+}
+
+.add-task-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.add-task-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.add-task-btn {
+    background: #ff5f6d;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.add-task-btn:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Task Items */
+.todo-list-items {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list-item {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.todo-list-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Completed Tasks */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Buttons */
+.task-buttons button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.task-buttons button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.delete-btn {
+    background: #ff4d4d;
+    color: white;
+}
+
+.toggle-btn {
+    background: #4caf50;
+    color: white;
+}
+
+/* Shake Effect */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
